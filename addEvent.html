@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#form').onsubmit = function() {
+                    const name = document.querySelector('#name').value;
+                    alert(`Hello, ${name}`);
+                };
+            });
+        </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Сделать цвет шрифта красным
+            document.querySelector('#red').onclick = function() {
+                document.querySelector('h1').style.color = 'red';
+            };
+            // Сделать цвет шрифта blue
+            document.querySelector('#blue').onclick = function() {
+                document.querySelector('h1').style.color = 'blue';
+            };
+            // Сделать цвет шрифта зеленым
+            document.querySelector('#green').onclick = function() {
+                document.querySelector('h1').style.color = 'green';
+            };
+        })
+    </script>
+</head>
+<body>
+    <!-- <form id="form">
+        <input id="name" autocomplete="off" autofocus placeholder="Name" type="text">
+        <input type="submit">
+    </form> -->
+    <h1 id="hello">Hello, Python</h1>
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+</body>
+</html>

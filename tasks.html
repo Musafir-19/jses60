@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Отключаем кнопку
+            document.querySelector('#submit').disabled = true;
+
+            // Включаем кнопку при наличии текста
+            document.querySelector('#task').onkeydown = () => {
+                if (document.querySelector('#task').value)
+                    document.querySelector('#submit').disabled = false;
+                else
+                    document.querySelector('#submit').disabled = true;
+                
+            };  
+            document.querySelector('#new-task').onsubmit = () => {
+
+                // Создание нового элемента списка
+                const li = document.createElement('li');
+                li.innerHTML  = document.querySelector('#task').value;
+
+                // Добавление нового элемента в список
+                document.querySelector('#tasks').append(li);
+
+                // Очистить поле ввода и повторно отключить кнопку
+                document.querySelector('#task').value = '';
+                document.querySelector('#submit').disabled = true;
+
+                // Запрет на отправку формы
+                return false;
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+    </ul>
+    <form id="new-task">
+        <input id="task" autocomplete="off" autofocus placeholder="New task" type="text">
+        <input id="submit" type="submit">
+    </form>
+    
+</body>
+</html>

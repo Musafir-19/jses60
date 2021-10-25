@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Задать число 0 как начальное значение
+        if (!localStorage.getItem('counter'))
+            (localStorage.setItem('counter', 0));
+        
+        // Загрузить текущее значение счетчика
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#counter').innerHTML = localStorage.getItem('counter');
+        
+        document.querySelector('button').onclick = () => {
+            // Увеличение счетчика 1
+            let counter = localStorage.getItem('counter');
+            counter++;
+            // Обновление счетчика
+            document.querySelector('#counter').innerHTML = counter;
+            localStorage.setItem('counter', counter);
+        };
+        });
+
+    </script>
+</head>
+<body>
+    <h1 id="counter"></h1>
+    <button>clikni tut</button>
+</body>
+</html>
